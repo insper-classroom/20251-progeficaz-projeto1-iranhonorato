@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<div class="imagem">
+  <img src="{{ url_for('static', filename='img/logo-getit.png') }}">
+  <p>Como o Post-it, mas com outro verbo</p>
+</div>
+
+<div class='publicar'>
+  <p><a href='{{url_for("add_post")}}' class='btn btn-success '>Adicionar publicação</a></p>
+</div>
+
+    <div class="data_container">
+      {% for row in datas %}
+      <div class="post">
+          <h1>{{row.TITLE}}</h1>
+          <p>{{row.CONTENT}}<p>
+          <div class="actions">
+          <a href='{{url_for("edit_post",uid=row.UID)}}' class='btn btn-primary'>Editar</a>
+          <a class="delete" href='{{url_for("delete_post",uid=row.UID)}}' class='btn btn-danger' onclick='return confirm("Tem certeza?")'>Deletar</a>
+          </div>
+      </div>
+      {%endfor%}
+    </div>
+{% endblock %}

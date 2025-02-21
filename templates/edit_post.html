@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% block body %}
+  <div class='row'>
+    <div class='col-5 mx-auto'>
+      <h3>Edição</h3><hr>
+      <form method='post' action='{{url_for("edit_post",uid=datas.UID)}}'>
+        <div class='form-group'>
+          <label>Título</label>
+          <input type='text' name='title' required class='form-control' value='{{datas.TITLE}}'>
+        </div>
+        <div class='form-group'>
+          <label>Conteúdo</label>
+          <input type='text' name='content' required class='form-control' value='{{datas.CONTENT}}'>
+        </div>
+        <input type='submit' value='Submit' class='btn btn-primary'>
+      </form>
+    </div>
+  </div>
+{% endblock %}
