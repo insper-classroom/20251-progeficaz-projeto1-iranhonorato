@@ -2,20 +2,26 @@
 {% block body %}
 
   <div class='row'>
-    <div class='col-5 mx-auto'>
+    <div class='add'>
+      <div class="titulo">
       <h3>Adicione um post</h3><hr>
+      <img src="{{ url_for('static', filename='img/logo-getit.png') }}">
+      </div>
+      <div class="formulario">
       <form method='post' action='{{url_for("add_post")}}'>
-        <div class='form-group'>
+        <div class='form-group-title'>
           <label>Título</label>
           <input type='text' name='title' required class='form-control'>
         </div>
-        <div class='form-group'>
+        <div class='form-group-content'>
           <label>Conteúdo</label>
           <input type='text' name='content' required class='form-control'>
         </div>
-        <input type='submit' value='Submit' class='btn btn-primary'>
+        <div class="ok">
+        <input type='submit' value='Postar' class='btn btn-primary'>
+      </div>
+      </div>
       </form>
-    
     </div>
   </div>
 {% endblock %}
