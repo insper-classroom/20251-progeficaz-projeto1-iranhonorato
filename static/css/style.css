@@ -165,6 +165,7 @@ body {
 
 .form-group-title input {
     width: 20rem;
+    height: 1.5rem;
 }
 
 
@@ -207,3 +208,10 @@ input[type='submit']:hover {
     background-color: rgb(255, 212, 159); 
 }
 
+.row-edit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+
+} 
